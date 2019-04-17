@@ -1,5 +1,4 @@
 #include "PMS.h"
-
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -14,8 +13,8 @@ PMS::DATA data;
 #define TXD2 25
 
 // ESP32 --> Pantower PMS7003
-// 22    --> RX
-// 23    --> TX
+// 26    --> RX
+// 25    --> TX
 // GND   --> GND
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
@@ -50,13 +49,12 @@ void loop()
   //Serial.println("Wait max. 1 second for read...");
   if (pms.readUntil(data))
   {
-//
+
 //    Serial.print("PM 1.0 (ug/m3): ");
 //    Serial.println(data.PM_AE_UG_1_0);
 //
 //    Serial.print("PM 2.5 (ug/m3): ");
 //    Serial.println(data.PM_AE_UG_2_5);
-//
 //
 //    Serial.print("PM 10.0 (ug/m3): ");
 //    Serial.println(data.PM_AE_UG_10_0);
